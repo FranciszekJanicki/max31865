@@ -3,6 +3,10 @@
 
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
     uint8_t vbias : 1;
     uint8_t conv_mode : 1;
@@ -29,5 +33,9 @@ typedef struct LOW_FAULT {
 typedef struct FAULT_STATUS {
     uint8_t fault_status : 8;
 } max31865_fault_status_reg_t;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // MAX31865_MAX31865_REGISTERS_H

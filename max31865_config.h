@@ -4,6 +4,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef float float32_t;
 
 typedef enum {
@@ -62,5 +66,9 @@ typedef struct {
     max31865_err_t (*bus_write_data)(void*, uint8_t, uint8_t const*, size_t);
     max31865_err_t (*bus_read_data)(void*, uint8_t, uint8_t*, size_t);
 } max31865_interface_t;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // MAX31865_MAX31865_CONFIG_H

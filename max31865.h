@@ -5,6 +5,10 @@
 #include "max31865_registers.h"
 #include <stdbool.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
     max31865_config_t config;
     max31865_interface_t interface;
@@ -41,5 +45,9 @@ max31865_err_t max31865_get_rtd_reg(max31865_t const* max31865,
 
 max31865_err_t max31865_set_vbias(max31865_t const* max31865, bool vbias);
 max31865_err_t max31865_start_one_shot_conversion(max31865_t const* max31865);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // MAX31865_MAX31865_H
